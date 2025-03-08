@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Cliente</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { max-width: 400px; margin: auto; }
+        label, select, input { display: block; width: 100%; margin-bottom: 10px; }
+        button { background-color: #28a745; color: white; padding: 10px; border: none; width: 100%; cursor: pointer; }
+        button:hover { background-color: #218838; }
+        a { display: block; text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Agregar Cliente</h1>
+    <form method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="18" max="100" required>
+
+        <label for="salud">Salud:</label>
+        <select id="salud" name="salud" required>
+            <option value="saludable">Saludable</option>
+            <option value="diabetes">Diabetes</option>
+            <option value="hipertension">Hipertensión</option>
+            <option value="obesidad">Obesidad</option>
+        </select>
+
+        <label for="historial_familiar">Historial Familiar:</label>
+        <select id="historial_familiar" name="historial_familiar" required>
+            <option value="true">Sí</option>
+            <option value="false">No</option>
+        </select>
+
+        <label for="estilo_vida">Estilo de Vida:</label>
+        <select id="estilo_vida" name="estilo_vida" required>
+            <option value="activo">Activo</option>
+            <option value="fumador">Fumador</option>
+            <option value="alcoholico">Alcohólico</option>
+        </select>
+
+        <label for="ocupacion">Ocupación:</label>
+        <select id="ocupacion" name="ocupacion" required>
+            <option value="oficina">Oficina</option>
+            <option value="piloto">Piloto</option>
+            <option value="bombero">Bombero</option>
+            <option value="minero">Minero</option>
+        </select>
+
+        <label for="historial_seguro">Historial de Seguro:</label>
+        <select id="historial_seguro" name="historial_seguro" required>
+            <option value="bueno">Bueno</option>
+            <option value="reclamos_frecuentes">Reclamos Frecuentes</option>
+        </select>
+
+        <button type="submit">Agregar Cliente</button>
+    </form>
+
+    <a href="{{ url_for('index') }}">Volver a la lista de clientes</a>
+</body>
+</html>
