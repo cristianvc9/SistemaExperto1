@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            max-width: 600px;
+            margin: auto;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .btn {
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0056b3, #003580);
+        }
+        .btn-success {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            border: none;
+        }
+        .btn-success:hover {
+            background: linear-gradient(135deg, #1e7e34, #155d27);
+        }
+        .list-group-item {
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            border: none;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <h2 class="mb-4">Sistema Experto de Riesgo Crediticio</h2>
+            <div>
+                <a href="{{ url_for('agregar_cliente') }}" class="btn btn-primary">Agregar Cliente</a>
+                <a href="{{ url_for('resultados') }}" class="btn btn-success">Evaluar Clientes</a>
+            </div>
+            <h3 class="mt-4">Lista de Clientes</h3>
+            <ul class="list-group">
+                {% for cliente in clientes %}
+                    <li class="list-group-item">{{ cliente.nombre }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
